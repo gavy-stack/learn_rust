@@ -15,15 +15,7 @@ fn main() {
         // Print the current board
         print_board(&pos);
 
-        // Show whose turn it is
-        let turn = if pos.turn() == Color::White {
-            "White"
-        } else {
-            "Black"
-        };
-        println!("\n{} to move.", turn);
-
-        // Check for game over
+         // Check for game over
         if pos.is_checkmate() {
             println!("Checkmate! {} wins.", if pos.turn() == Color::White { "Black" } else { "White" });
             break;
@@ -36,6 +28,14 @@ fn main() {
             println!("Draw by insufficient material.");
             break;
         }
+
+        // Show whose turn it is
+        let turn = if pos.turn() == Color::White {
+            "White"
+        } else {
+            "Black"
+        };
+        println!("\n{} to move.", turn);
 
         // Ask for a move
         print!("Your move: ");
