@@ -3,6 +3,7 @@ use shakmaty::{Chess, Color, Position, Role, Square};
 use shakmaty::uci::UciMove;
 use std::io::{self, Write};
 
+// Adding the main function
 fn main() {
     // Start a new game from the standard starting position
     let mut pos = Chess::default();
@@ -15,7 +16,7 @@ fn main() {
         // Print the current board
         print_board(&pos);
 
-         // Check for game over
+         // Add checking for checkmate, stalemate, and insufficient material to check the status of the game 
         if pos.is_checkmate() {
             println!("Checkmate! {} wins.", if pos.turn() == Color::White { "Black" } else { "White" });
             break;
@@ -29,7 +30,7 @@ fn main() {
             break;
         }
 
-        // Show whose turn it is
+        // Adding this to show whose turn it is
         let turn = if pos.turn() == Color::White {
             "White"
         } else {
@@ -50,7 +51,7 @@ fn main() {
             break;
         }
 
-        // Try to parse the move as UCI (e.g. "e2e4")
+        // Adding the move as UCI (e.g. "e2e4")
         match input.parse::<UciMove>() {
             Ok(uci) => {
                 // Convert UCI to a legal Move in the current position
@@ -72,7 +73,7 @@ fn main() {
     }
 }
 
-/// Simple function that prints the board with Unicode chess pieces
+/// Adding the Unicode chess pieces
 fn print_board(pos: &Chess) {
     println!("\n  a b c d e f g h");
     println!("  ---------------");

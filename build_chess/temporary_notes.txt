@@ -10,3 +10,16 @@ build_chess/
     ├── ui.rs            # everything related to display + input (console or TUI)
     └── lib.rs           # optional: re-export public items if you later want a library
 
+The Structure of main.rs
+imports
+main()
+  ├─ create the game (once, before the loop)
+  └─ loop (repeats every turn)
+       ├─ print the board           → calls print_board()
+       ├─ check game over           → break if checkmate/stalemate/draw
+       ├─ show whose turn it is
+       ├─ read input from the player
+       ├─ handle "quit" / "exit"    → break
+       └─ parse + validate + play the move (or print an error)
+print_board()
+  └─ loops over ranks and files, picks a Unicode symbol for each square
