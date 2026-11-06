@@ -1,0 +1,12 @@
+The Structure of The Directory of build_chess
+
+build_chess/
+├── Cargo.toml
+└── src/
+    ├── main.rs          # only starts the app / game loop
+    ├── board.rs         # board representation, printing, FEN helpers
+    ├── game.rs          # game state, turn management, outcome (checkmate etc.)
+    ├── moves.rs         # move parsing, validation helpers (thin wrapper around the chess crate)
+    ├── ui.rs            # everything related to display + input (console or TUI)
+    └── lib.rs           # optional: re-export public items if you later want a library
+
