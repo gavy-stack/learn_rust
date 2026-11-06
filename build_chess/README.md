@@ -1,4 +1,7 @@
-The Structure of The Directory of build_chess
+# OPENING
+Hello guys, this is the official documentation of me learning Rust through creating a chess game. Hope it works!
+
+# The Structure of The Directory of build_chess
 
 build_chess/
 ├── Cargo.toml
@@ -10,7 +13,8 @@ build_chess/
     ├── ui.rs            # everything related to display + input (console or TUI)
     └── lib.rs           # optional: re-export public items if you later want a library
 
-The Structure of main.rs
+# The Structure of main.rs
+
 imports
 main()
   ├─ create the game (once, before the loop)
